@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="styless.css">
+    <title>Protfólio</title>
+</head>
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu_link">Início</a>
+            </li>
+              <li>
+                <a href="#sobre" class="menu_link">Sobre</a>
+            </li>
+              <li>
+                <a href="#projetos" class="menu_link">Projetos</a>
+            </li>
+              <li>
+                <a href="#contato" class="menu_link">Contato</a>
+            </li>
+        </ul>
+    </nav>   
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/foto.jpg" alt="Matheus Rossi" class="foto_perfil">
+        <h1>Matheus Rossi</h1>
+        <p class="cabecalho_sub_titulo">Desenvolvedor Junior</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre_titulo">Sobre Mim</h2>
+        <div class="sobre_mim_caixa">
+            <p class="sobre_mim_texto">
+                Ola me chamo Matheus e esse é o texto sobre mim
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos_titulo">Meus Projetos</h2>
+
+        <div class="projetos_wrapper">
+            <button class="seta esquerda">&#10094;</button>
+                <!--LINHA 1-->
+                <div class="projetos_slider linha1">
+
+                    <div class="projeto_card">
+                        <img src="./img/loja_de_carro.jpg" alt="Projeto 1" class="projeto_imagem">
+                        <div class="caixa_texto_projeto">
+                            <h3 class="titulos_porjetos">titulo do projeto</h3>
+                            <p class="paragrafos_projetos">descrição do projeto</p>
+                        </div>
+                    </div>
+
+                    <div class="projeto_card">
+                        <img src="./img/projeto2.png" alt="Projeto 2" class="projeto_imagem">
+                        <div class="caixa_texto_projeto">
+                            <h3 class="titulos_porjetos">titulo do projeto 2</h3>
+                            <p class="paragrafos_projetos">descrição do projeto 2</p>
+                        </div>
+                    </div>
+
+                    <div class="projeto_card">
+                        <img src="./img/projeto3.png" alt="Projeto 3" class="projeto_imagem">
+                        <div class="caixa_texto_projeto">
+                            <h3 class="titulos_porjetos">titulo do projeto 3</h3>
+                            <p class="paragrafos_projetos">descrição do projeto 3</p>
+                        </div>
+                    </div>
+                
+                    <div class="projeto_card"></div>
+                    <div class="projeto_card"></div>
+                </div>    
+            <button class="seta direita">&#10095;</button>
+            
+            <button class="seta esquerda">&#10094;</button>
+                <!--LINHA 2-->
+                <div class="projetos_slider linha2">
+                    <div class="projeto_card">
+                        <img src="./img/projeto3.png" alt="Projeto 3" class="projeto_imagem">
+                            <div class="caixa_texto_projeto">
+                                <h3 class="titulos_porjetos">titulo do projeto 3</h3>
+                                <p class="paragrafos_projetos">descrição do projeto 3</p>
+                            </div>
+                    </div>
+                    <div class="projeto_card"></div>
+                    <div class="projeto_card"></div>
+                    <div class="projeto_card"></div>
+                    <div class="projeto_card"></div>
+                </div>
+            <button class="seta direita">&#10095;</button>    
+
+        <div class="projetos_wrapper"></div>     
+    </section>
+
+    <!-- <section id="projetos" class="projetos">
+        <h2 class="projetos_titulo">Meus Projetos</h2>
+        <div class="projetos_caixa">
+            <div class="projeto_card">
+                <img src="./img/loja_de_carro.jpg" alt="Projeto 1" class="projeto_imagem">
+                <div class="caixa_texto_projeto">
+                <h3 class="titulos_porjetos">titulo do projeto </h3>
+                <p class="paragrafos_projetos">descriçao do projeto</p>
+                </div>
+            </div>
+            <div class="projeto_card">
+                <img src="./img/projeto2.png" alt="Projeto 1" class="projeto_imagem">
+                <div class="caixa_texto_projeto">
+                <h3 class="titulos_porjetos">titulo do projeto 2 </h3>
+                <p class="paragrafos_projetos">descriçao do projeto 2</p>
+                </div>
+            </div>
+            <div class="projeto_card">
+                <img src="./img/projeto3.png" alt="Projeto 1" class="projeto_imagem">
+                <div class="caixa_texto_projeto">
+                <h3 class="titulos_porjetos">titulo do projeto 3 </h3>
+                <p class="paragrafos_projetos">descriçao do projeto 3</p>
+                </div>
+            </div>
+         </div>
+    </section>-->
+
+    <section id="contato" class="contato">
+        <h2 class="contatos_titulo">Entre em Contato</h2>
+
+        <form class="formulario_contato" id="formulario">
+            <div class="grupo_form">
+                <input class="campo_form" placeholder="Nome">
+            </div>
+
+            <div class="grupo_form">
+                <textarea class="campo_form" placeholder="Digite sua Mensagem"></textarea>
+            </div>
+            
+            <button type="submit" class="botao_form">Enviar WhatsApp</button>
+         </form>
+
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.projetos_slider').forEach(slider => {
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('ativo');
+    startX = e.pageX;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('ativo');
+});
+
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('ativo');
+});
+
+slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+
+    const walk = (e.pageX - startX) * 1.2;
+
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+});
+</script>
+
+<script>
+
+document.querySelectorAll('.projetos_wrapper').forEach(wrapper => {
+
+    const slider = wrapper.querySelector('.projetos_slider');
+    const btnLeft = wrapper.querySelector('.esquerda');
+    const btnRight = wrapper.querySelector('.direita');
+
+    const cardWidth = 360; // largura do card + gap
+
+    btnRight.addEventListener('click', () => {
+        slider.scrollBy({
+            left: cardWidth,
+            behavior: "smooth"
+        });
+    });
+
+    btnLeft.addEventListener('click', () => {
+        slider.scrollBy({
+            left: -cardWidth,
+            behavior: "smooth"
+        });
+    });
+
+});
+
+</script>
